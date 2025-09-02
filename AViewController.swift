@@ -16,7 +16,11 @@ import UIKit
 class AViewController: UIViewController, SlideMenuDelegate {
 
     // MARK: - Menu layout
-    private let menuWidth: CGFloat = 280
+    //private let menuWidth: CGFloat = 280
+    private var menuWidth: CGFloat {
+        min(UIScreen.main.bounds.width * 0.8, 400) // 最大 400pt
+    }
+
     private var menuLeadingConstraint: NSLayoutConstraint!
     private var isMenuOpen = false
 
